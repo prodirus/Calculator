@@ -1,0 +1,63 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="400"
+        >
+
+    <Grid Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid Name="numberBox" Grid.Row="0">
+            <Label Name="numberField">0</Label>
+        </Grid>
+        <Grid Name="resultsBox" Grid.Row="0" Grid.Column="1">
+            <Label Name="resultsField">0</Label>
+            </Grid>
+        <Grid Name="numberGrid" Grid.Row ="1" Grid.Column="0"  Margin="10">
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <EventSetter Event="Click" Handler="NumberButton_Click" />
+                </Style>
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid x:Name="mathControls" Grid.Row="1" Grid.Column="1" Margin="10" MinWidth="60" Width="Auto">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button x:Name="btnDel" Grid.Row="0" Click="ButtonDel_Click">Del</Button>
+            <Button x:Name="btnDiv" Grid.Row="1" Click="ButtonDiv_Click">%</Button>
+            <Button x:Name="btnMul" Grid.Row="2" Click="ButtonMul_Click">X</Button>
+            <Button x:Name="btnSub" Grid.Row="3" Click="ButtonSub_Click">-</Button>
+            <Button x:Name="btnAdd" Grid.Row="4" Click="ButtonAdd_Click">+</Button>
+            <Button x:Name="btnSum" Grid.Row="5" Click="ButtonSum_Click">=</Button>
+        </Grid>
+    </Grid>
+</Window>
